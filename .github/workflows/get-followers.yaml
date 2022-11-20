@@ -13,7 +13,7 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v3 # checkout repository content
         with:
-          ref: main
+          ref: master
           fetch-depth: '0'
 
       - name: setup python
@@ -45,4 +45,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          branch: master
