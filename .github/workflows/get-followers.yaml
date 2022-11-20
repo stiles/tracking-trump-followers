@@ -27,13 +27,17 @@ jobs:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
         run: |
           python get-followers.py
-          
+  
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
           git commit -m "update data" -a --allow-empty
+     
+      - name: Pull Remote Changes
+        run: git pull
+        
       - name: push changes
         uses: ad-m/github-push-action@master
         with:
