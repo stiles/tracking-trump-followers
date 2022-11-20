@@ -12,6 +12,9 @@ jobs:
 
       - name: checkout repo content
         uses: actions/checkout@v3 # checkout repository content
+        with:
+          ref: main
+          fetch-depth: '0'
 
       - name: setup python
         uses: actions/setup-python@v4
